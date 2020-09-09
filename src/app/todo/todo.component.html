@@ -1,4 +1,23 @@
-<div style="background-color: lightgreen;height: 400px;width:400px;top:40%;margin-left:300px;">
+<div style="margin-left:450px">
+<div style="background-color: lightgreen;height: 300px;width:500px;top:40%;margin-left:100px;">
+<h4 style="text-align:center">TODO LIST</h4>
 <input type="text" (input)="todoval=$event.target.value;">
-<button (click)="todo()">+Add</button>
+<button (click)="todo()">Add</button><br>
+
+<div *ngFor="let val of dolist;let i=index">
+<div>{{val}}
+<button (click)="todorem(i)">Remove</button>
+<button (click)="tomadd(val,i)">Move</button>
+</div>
+</div>
+</div>
+</div>
+<div style="margin-left:450px">
+<div style="background-color:coral;height: 300px;width:500px;top:40%;margin-left:100px;">
+<h4 style="text-align: center;">TOMORROW LIST</h4>
+<div *ngFor="let tom of tomlist;let k=index">
+<div>{{tom}}</div>
+<button (click)="tomrem(k)">Remove</button>
+</div>
+</div>
 </div>
